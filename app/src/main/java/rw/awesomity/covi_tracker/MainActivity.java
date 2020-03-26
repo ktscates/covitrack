@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
 
     //preference file name
     private static final String FILE_NAME = "file_lang";
-    //preference key
+    // preference key
     private static final String KEY_LANG = "key_lang";
 
     TextView bring;
@@ -30,7 +30,6 @@ public class MainActivity extends AppCompatActivity {
         loadLanguage();
         setContentView(R.layout.activity_main);
         bring = (TextView) findViewById(R.id.bring);
-        family = (TextView) findViewById(R.id.family);
         start = (Button) findViewById(R.id.start);
 
     }

@@ -1,4 +1,3 @@
-
 package rw.awesomity.covi_tracker.Model;
 
 import com.google.gson.annotations.Expose;
