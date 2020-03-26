@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">CoviTrack</string>
+    <string name="bring">Donner vie</string>
+    <string name="family">à la santé pour toute la famille</string>
+    <string name="start_btn">Entrer</string>
+</resources>
