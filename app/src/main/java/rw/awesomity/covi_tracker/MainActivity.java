@@ -6,7 +6,6 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 
@@ -18,23 +17,18 @@ import rw.awesomity.covi_tracker.Fragment.SearchFragment;
 import rw.awesomity.covi_tracker.Fragment.StatFragment;
 import rw.awesomity.covi_tracker.Fragment.TipFragment;
 
-public class HomeActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity {
 
-    private DrawerLayout drawer;
+    BottomNavigationView bottomNav;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
+        setContentView(R.layout.activity_main);
 
-        BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation);
+        bottomNav = (BottomNavigationView) findViewById(R.id.bottom_navigation);
         bottomNav.setOnNavigationItemSelectedListener(navListener);
 
-        //I added this if statement to keep the selected fragment when rotating the device
-        if (savedInstanceState == null) {
-            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                    new NewCaseFragment()).commit();
-        }
     }
 
     private BottomNavigationView.OnNavigationItemSelectedListener navListener =
