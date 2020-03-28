@@ -1,67 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimary"
-    android:padding="10dp"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/app_name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_gravity="center"
-        android:text="@string/app_name"
-        android:textAlignment="center"
-        android:textColor="@color/colorPrimaryDark"
-        android:textSize="50sp" />
-
-        <LinearLayout
-            android:id="@+id/linear"
+        <FrameLayout
+            android:id="@+id/fragment_container"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:layout_margin="10dp"
-            android:layout_below="@id/app_name"
-            android:background="@drawable/rounded"
-            android:orientation="vertical"
-            android:padding="16dp"
-            android:textAlignment="center">
+            android:layout_height="match_parent"
+            android:layout_above="@id/bottom_navigation"/>
 
-            <TextView
-                android:id="@+id/bring"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="@string/bring"
-                android:textAlignment="center"
-                android:textColor="@color/colorPrimary"
-                android:textSize="30sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/family"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="@string/family"
-                android:textAlignment="center"
-                android:textColor="@color/colorPrimary"
-                android:textSize="20sp" />
-
-        </LinearLayout>
-
-    <Button
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_margin="10dp"
-        android:background="@drawable/rounded"
-        android:padding="16dp"
-        android:text="@string/start_btn"
-        android:textSize="20sp" />
+        app:itemTextColor="@color/colorWhite"
+        app:itemIconSize="18dp"
+        app:itemIconTint="@color/colorWhite"
+        app:labelVisibilityMode="labeled"
+        app:menu="@menu/menu_main"
+        android:background="@color/colorLightRed"/>
 
 </RelativeLayout>
