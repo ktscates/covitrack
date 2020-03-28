@@ -1,8 +1,9 @@
 <resources>
     <string name="app_name" translatable="false">CoviTrack</string>
-    <string name="bring">Bringing Health</string>
-    <string name="family">to life for the whole family</string>
-    <string name="start_btn">Start</string>
-    <string name="navigation_drawer_open" translatable="false">Open navigation drawer</string>
-    <string name="navigation_drawer_close" translatable="false">Close navigation drawer</string>
+    <string name="home">Home</string>
+    <string name="new_cases">Cases</string>
+    <string name="search">Search</string>
+    <string name="tips">Tips</string>
+    <string name="stats">Stats</string>
+
 </resources>
