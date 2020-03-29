@@ -2,13 +2,21 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:ndroid="http://schemas.android.com/tools"
     android:orientation="vertical">
 
-    <TextView
+<!--    <SearchView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        ndroid:id="@+id/action_search"-->
+<!--        android:icon="@drawable/ic_search_white_24dp"-->
+<!--        android:title="Search"-->
+<!--        app:actionViewClass="android.widget.SearchView"/>-->
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/search_recycler_view"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Search Fragment"
-        android:textSize="30dp"
-        android:layout_centerInParent="true" />
+        android:layout_height="wrap_content"/>
 
 </LinearLayout>
