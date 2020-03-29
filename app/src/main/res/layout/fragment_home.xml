@@ -1,14 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
     <TextView
+        android:id="@+id/country"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Home Fragment"
-        android:textSize="30dp"
-        android:layout_centerInParent="true" />
+        android:text="country"
+        android:textColor="@color/colorBlack"
+        android:textAlignment="center"
+        android:textSize="30sp" />
 
-</RelativeLayout>
+    <ImageView
+        android:id="@+id/flag"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:contentDescription="flag"
+        android:src="@drawable/rwanda" />
+
+    <TextView
+        android:id="@+id/total_cases"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="total cases"
+        android:textColor="@color/colorBlack"
+        android:textAlignment="center"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/new_cases"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="cases"
+        android:textColor="@color/colorBlack"
+        android:textAlignment="center"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/active"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="active"
+        android:textColor="@color/colorBlack"
+        android:textAlignment="center"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/recovered"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="recover"
+        android:textColor="@color/colorBlack"
+        android:textAlignment="center"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/deaths"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="deaths"
+        android:textColor="@color/colorBlack"
+        android:textAlignment="center"
+        android:textSize="20sp" />
+
+</LinearLayout>
