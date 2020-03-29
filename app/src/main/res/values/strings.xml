@@ -1,12 +1,9 @@
 <resources>
-    <string name="app_name">CoviTack</string>
-    <string name="bring">Bringing Health</string>
-    <string name="family">to life for the whole family</string>
-    <string name="language">Choose your preferred language</string>
-    <string-array name="lang_array">
-        <item>English</item>
-        <item>French</item>
-        <item>Kinyarwanda</item>
-    </string-array>
-    <string name="start_btn">Enter</string>
+    <string name="app_name" translatable="false">CoviTrack</string>
+    <string name="home">Home</string>
+    <string name="new_cases">Cases</string>
+    <string name="search">Search</string>
+    <string name="tips">Tips</string>
+    <string name="stats">Stats</string>
+
 </resources>
