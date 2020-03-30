@@ -5,5 +5,13 @@
     <string name="search">Search</string>
     <string name="tips">Tips</string>
     <string name="stats">Stats</string>
+    <string name="search_view">Search Country</string>
+    <string name="all">Stats</string>
+<!--    <string name="country">Country</string>-->
+<!--    <string name="total_cases">Total Cases</string>-->
+<!--    <string name="cases">New Cases</string>-->
+<!--    <string name="active">Active</string>-->
+<!--    <string name="recovered">Recovered</string>-->
+<!--    <string name="deaths">Deaths</string>-->
 
 </resources>
