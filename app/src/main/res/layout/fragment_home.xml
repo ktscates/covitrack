@@ -2,22 +2,27 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="10dp"
+    android:layout_margin="10dp"
     android:orientation="vertical">
 
     <TextView
         android:id="@+id/country"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="country"
+        android:text="@string/country"
+        android:fontFamily="@font/concert_one"
+        android:layout_margin="5dp"
         android:textColor="@color/colorBlack"
         android:textAlignment="center"
         android:textSize="30sp" />
 
     <ImageView
         android:id="@+id/flag"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:layout_gravity="center"
+        android:layout_margin="5dp"
         android:contentDescription="flag"
         android:src="@drawable/rwanda" />
 
@@ -25,7 +30,9 @@
         android:id="@+id/total_cases"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="total cases"
+        android:text="@string/total_cases"
+        android:layout_margin="5dp"
+        android:fontFamily="@font/concert_one"
         android:textColor="@color/colorBlack"
         android:textAlignment="center"
         android:textSize="20sp" />
@@ -34,7 +41,9 @@
         android:id="@+id/new_cases"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="cases"
+        android:layout_margin="5dp"
+        android:text="@string/cases"
+        android:fontFamily="@font/concert_one"
         android:textColor="@color/colorBlack"
         android:textAlignment="center"
         android:textSize="20sp" />
@@ -43,8 +52,10 @@
         android:id="@+id/active"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="active"
+        android:text="@string/active"
+        android:fontFamily="@font/concert_one"
         android:textColor="@color/colorBlack"
+        android:layout_margin="5dp"
         android:textAlignment="center"
         android:textSize="20sp" />
 
@@ -52,8 +63,10 @@
         android:id="@+id/recovered"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="recover"
-        android:textColor="@color/colorBlack"
+        android:text="@string/recovered"
+        android:fontFamily="@font/concert_one"
+        android:layout_margin="5dp"
+        android:textColor="@android:color/holo_green_light"
         android:textAlignment="center"
         android:textSize="20sp" />
 
@@ -61,8 +74,10 @@
         android:id="@+id/deaths"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="deaths"
-        android:textColor="@color/colorBlack"
+        android:text="@string/deaths"
+        android:layout_margin="5dp"
+        android:fontFamily="@font/concert_one"
+        android:textColor="@color/colorLightRed"
         android:textAlignment="center"
         android:textSize="20sp" />
 

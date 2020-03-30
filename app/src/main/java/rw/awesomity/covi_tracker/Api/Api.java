@@ -17,8 +17,11 @@ public interface Api {
     @GET("all")
     Call<Stats> getAll();
 
-    @GET("countries")
+    @GET("countries/rwanda")
     Call<Country> getOneCountry();
+
+    @GET("countries/rwanda")
+    Call<CountryInfo> getOneFlag();
 
     @GET("countries")
     Call<List<CountryInfo>> getFlags();

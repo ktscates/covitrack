@@ -6,13 +6,6 @@
     xmlns:ndroid="http://schemas.android.com/tools"
     android:orientation="vertical">
 
-<!--    <SearchView-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        ndroid:id="@+id/action_search"-->
-<!--        android:icon="@drawable/ic_search_white_24dp"-->
-<!--        android:title="Search"-->
-<!--        app:actionViewClass="android.widget.SearchView"/>-->
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/search_recycler_view"
