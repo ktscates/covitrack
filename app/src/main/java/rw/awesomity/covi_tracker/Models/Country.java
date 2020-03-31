@@ -4,6 +4,8 @@ package rw.awesomity.covi_tracker.Models;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import java.util.Comparator;
+
 public class Country {
 
     @SerializedName("country")
@@ -80,6 +82,20 @@ public class Country {
         this.deathsPerOneMillion = deathsPerOneMillion;
         this.updated = updated;
     }
+
+    public static final Comparator<Country> BY_NAME_ALPHABETICAL = new Comparator<Country>() {
+        @Override
+        public int compare(Country o1, Country o2) {
+            return o1.country.compareTo(o2.country);
+        }
+    };
+
+    public static final Comparator<Country> BY_TODAY_CASES = new Comparator<Country>() {
+        @Override
+        public int compare(Country o1, Country o2) {
+            return o1.todayCases.compareTo(o2.todayCases);
+        }
+    };
 
     public String getCountry() {
         return country;

@@ -21,7 +21,7 @@ import rw.awesomity.covi_tracker.Models.Country;
 import rw.awesomity.covi_tracker.Models.CountryInfo;
 import rw.awesomity.covi_tracker.R;
 
-public class NewCaseAdapter extends RecyclerView.Adapter<NewCaseAdapter.NewCaseViewHolder> {
+public class NewCaseAdapter extends RecyclerView.Adapter<NewCaseAdapter.NewCaseViewHolder>{
 
     Context context;
     List<Country> countryList;
@@ -31,7 +31,7 @@ public class NewCaseAdapter extends RecyclerView.Adapter<NewCaseAdapter.NewCaseV
     public NewCaseAdapter(Context context, List<Country> countryList, List<CountryInfo> countryFlag) {
         this.context = context;
         this.countryList = countryList;
-        countryListSearch = new ArrayList<>(countryList);
+//        countryListSearch= new ArrayList<>(countryList);
         this.countryFlag = countryFlag;
 
     }
@@ -72,6 +72,12 @@ public class NewCaseAdapter extends RecyclerView.Adapter<NewCaseAdapter.NewCaseV
     public int getItemCount() {
         return countryList.size();
     }
+
+    public void filteredCountry(List<Country> list) {
+        countryList = list;
+        notifyDataSetChanged();
+    }
+
 
     public class NewCaseViewHolder extends RecyclerView.ViewHolder {
         ImageView flags;

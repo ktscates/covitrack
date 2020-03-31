@@ -1,11 +1,14 @@
 package rw.awesomity.covi_tracker.Fragments;
 
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
 
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -14,6 +17,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import retrofit2.Call;
@@ -33,13 +37,14 @@ public class SearchFragment extends Fragment {
     private SearchAdapter searchAdapter;
     private List<Country> countryList;
     private List<CountryInfo> countryFlag;
-//    private SearchView search;
+    private EditText filterText;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_search, container, false);
-        setHasOptionsMenu(true);
+
+        filterText = (EditText)view.findViewById(R.id.editText);
 
         countryList = new ArrayList<>();
         countryFlag = new ArrayList<>();
@@ -52,11 +57,38 @@ public class SearchFragment extends Fragment {
         searchAdapter = new SearchAdapter(getContext(), countryList, countryFlag);
         recyclerView.setAdapter(searchAdapter);
 
+        filterText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                getFilter(s.toString());
+            }
+
+            @Override
+            public void afterTextChanged(Editable s){
+            }
+        });
+
         loadCountryData();
         loadCountryFlags();
         return view;
 
+        }
 
+        public void getFilter(String text) {
+            List<Country> list = new ArrayList<>();
+
+            for (Country item : countryList) {
+                if (item.getCountry().toLowerCase().contains(text.toLowerCase())) {
+                    list.add(item);
+                }
+            }
+
+            searchAdapter.filteredCountry(list);
         }
 
         private void loadCountryFlags() {
@@ -86,6 +118,7 @@ public class SearchFragment extends Fragment {
                 @Override
                 public void onResponse(Call<List<Country>> call, Response<List<Country>> response) {
                     countryList = response.body();
+                    Collections.sort(countryList, Country.BY_NAME_ALPHABETICAL);
                     Log.d("TAG","Response = " + countryList);
                     searchAdapter.loadCountries(countryList);
 
