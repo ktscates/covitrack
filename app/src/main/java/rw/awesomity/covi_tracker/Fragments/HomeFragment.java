@@ -1,15 +1,19 @@
 package rw.awesomity.covi_tracker.Fragments;
 
 
+import android.media.Image;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -24,6 +28,7 @@ import rw.awesomity.covi_tracker.R;
 public class HomeFragment extends Fragment {
 
     private Api api;
+    ImageView flag_img;
     TextView country_name;
     TextView total_cases;
     TextView new_cases;
@@ -42,26 +47,37 @@ public class HomeFragment extends Fragment {
         active = (TextView)view.findViewById(R.id.active);
         recovered = (TextView)view.findViewById(R.id.recovered);
         deaths = (TextView)view.findViewById(R.id.deaths);
+        flag_img = (ImageView)view.findViewById(R.id.flag);
+
+        String flag = "https://raw.githubusercontent.com/NovelCOVID/API/master/assets/flags/rw.png";
+        Picasso.get().load(flag).fit().centerCrop().into(flag_img);
 
         api = RetrofitClient.getInstance().create(Api.class);
 
-        loadCountryData();
-        return view;
-    }
+        Call<Country> call = api.getOneCountry();
 
-    private void loadCountryData() {
-        Call<List<Country>> call = api.getCountries();
-
-        call.enqueue(new Callback<List<Country>>() {
+        call.enqueue(new Callback<Country>() {
             @Override
-            public void onResponse(Call<List<Country>> call, Response<List<Country>> response) {
+            public void onResponse(Call<Country> call, Response<Country> response) {
+
+                Country country = response.body();
+
+                    country_name.setText(country.getCountry());
+                    total_cases.setText("Total cases: " + country.getCases());
+                    new_cases.setText("New cases: " + country.getTodayCases());
+                    active.setText("Active cases: " + country.getActive());
+                    recovered.setText("Total recovered: " + country.getRecovered());
+                    deaths.setText("Total deaths: " + country.getDeaths());
 
             }
 
             @Override
-            public void onFailure(Call<List<Country>> call, Throwable t) {
+            public void onFailure(Call<Country> call, Throwable t) {
                 Log.d("TAG","Response = "+t.toString());
             }
         });
+
+
+        return view;
     }
 }
