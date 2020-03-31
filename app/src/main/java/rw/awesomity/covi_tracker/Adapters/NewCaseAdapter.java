@@ -58,15 +58,14 @@ public class NewCaseAdapter extends RecyclerView.Adapter<NewCaseAdapter.NewCaseV
 
         CountryInfo countryInfo = item.getCountryInfo();
 
-        String flag = countryInfo.getFlag();
-        String country_name = item.getCountry();
-        String cases = item.getTodayCases();
-//        String death = item.getTodayDeaths();
+            String flag = countryInfo.getFlag();
+            String country_name = item.getCountry();
+            String cases = item.getTodayCases();
 
-        Picasso.get().load(flag).fit().centerInside().into(holder.flags);
-        holder.country.setText(country_name);
-        holder.total_cases.setText("New cases: " + cases);
-//        holder.deaths.setText("New death: " + death);
+            Picasso.get().load(flag).fit().centerInside().into(holder.flags);
+            holder.country.setText(country_name);
+            holder.total_cases.setText("New cases: " + cases);
+
     }
 
     @Override
@@ -78,14 +77,12 @@ public class NewCaseAdapter extends RecyclerView.Adapter<NewCaseAdapter.NewCaseV
         ImageView flags;
         TextView country;
         TextView total_cases;
-//        TextView deaths;
 
         public NewCaseViewHolder(View itemView) {
             super(itemView);
             flags = (ImageView) itemView.findViewById(R.id.flag);
             country = (TextView)itemView.findViewById(R.id.country);
             total_cases = (TextView)itemView.findViewById(R.id.total_cases);
-//            deaths = (TextView)itemView.findViewById(R.id.deaths);
         }
     }
 }

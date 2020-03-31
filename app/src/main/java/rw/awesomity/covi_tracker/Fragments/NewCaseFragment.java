@@ -31,6 +31,7 @@ public class NewCaseFragment extends Fragment {
     private NewCaseAdapter newCaseAdapter;
     private List<Country> countryList;
     private List<CountryInfo> countryFlag;
+    private Country country;
 
     @Nullable
     @Override
@@ -81,7 +82,6 @@ public class NewCaseFragment extends Fragment {
         call.enqueue(new Callback<List<Country>>() {
             @Override
             public void onResponse(Call<List<Country>> call, Response<List<Country>> response) {
-                Country country = null;
                 countryList = response.body();
                 Log.d("TAG", "Response = " + countryList);
                 newCaseAdapter.loadCountries(countryList);

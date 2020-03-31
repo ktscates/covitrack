@@ -23,7 +23,6 @@ import retrofit2.Response;
 import rw.awesomity.covi_tracker.Api.Api;
 import rw.awesomity.covi_tracker.Api.RetrofitClient;
 import rw.awesomity.covi_tracker.Models.Country;
-import rw.awesomity.covi_tracker.Models.CountryInfo;
 import rw.awesomity.covi_tracker.R;
 
 public class HomeFragment extends Fragment {
@@ -51,7 +50,7 @@ public class HomeFragment extends Fragment {
         flag_img = (ImageView)view.findViewById(R.id.flag);
 
         String flag = "https://raw.githubusercontent.com/NovelCOVID/API/master/assets/flags/rw.png";
-        Picasso.get().load(flag).into(flag_img);
+        Picasso.get().load(flag).fit().centerCrop().into(flag_img);
 
         api = RetrofitClient.getInstance().create(Api.class);
 
