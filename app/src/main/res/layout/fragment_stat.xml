@@ -31,27 +31,16 @@
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
         android:fontFamily="@font/concert_one"
-        android:text="@string/new_cases"
+        android:text="@string/total_world_cases"
         android:textAlignment="center"
         android:textColor="@color/colorBlack"
-        android:textSize="20sp" />
-
-    <TextView
-        android:id="@+id/new_cases"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/updated"
-        android:layout_margin="5dp"
-        android:fontFamily="@font/concert_one"
-        android:textColor="@color/colorBlack"
-        android:textAlignment="center"
         android:textSize="20sp" />
 
     <TextView
         android:id="@+id/active"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/active"
+        android:text="@string/total_world_active"
         android:layout_margin="5dp"
         android:fontFamily="@font/concert_one"
         android:textColor="@color/colorBlack"
@@ -62,7 +51,7 @@
         android:id="@+id/recovered"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/recovered"
+        android:text="@string/total_world_recovered"
         android:layout_margin="5dp"
         android:fontFamily="@font/concert_one"
         android:textColor="@android:color/holo_green_light"
@@ -73,7 +62,7 @@
         android:id="@+id/deaths"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/deaths"
+        android:text="@string/total_world_deaths"
         android:layout_margin="5dp"
         android:fontFamily="@font/concert_one"
         android:textColor="@color/colorLightRed"

@@ -63,11 +63,11 @@ public class HomeFragment extends Fragment {
                 Country country = response.body();
 
                     country_name.setText(country.getCountry());
-                    total_cases.setText("Total cases: " + country.getCases());
-                    new_cases.setText("New cases: " + country.getTodayCases());
-                    active.setText("Active cases: " + country.getActive());
-                    recovered.setText("Total recovered: " + country.getRecovered());
-                    deaths.setText("Total deaths: " + country.getDeaths());
+                    total_cases.setText(getString(R.string.total_cases) + country.getCases());
+                    new_cases.setText(getString(R.string.cases) + country.getTodayCases());
+                    active.setText(getString(R.string.active) + country.getActive());
+                    recovered.setText(getString(R.string.recovered) + country.getRecovered());
+                    deaths.setText(getString(R.string.deaths) + country.getDeaths());
 
             }
 

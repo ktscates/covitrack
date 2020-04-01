@@ -17,6 +17,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.squareup.picasso.Picasso;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -68,11 +69,11 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchView
 //                ImageView dialog_flag =
 
                 dialog_country_name.setText(countryList.get(viewHolder.getAdapterPosition()).getCountry());
-                dialog_total.setText("Total cases: " + countryList.get(viewHolder.getAdapterPosition()).getCases());
-                dialog_cases.setText("New cases: " + countryList.get(viewHolder.getAdapterPosition()).getTodayCases());
-                dialog_active.setText("Active cases: " + countryList.get(viewHolder.getAdapterPosition()).getActive());
-                dialog_recover.setText("Total recovered: " + countryList.get(viewHolder.getAdapterPosition()).getRecovered());
-                dialog_death.setText("Total deaths: " + countryList.get(viewHolder.getAdapterPosition()).getDeaths());
+                dialog_total.setText(context.getString(R.string.total_cases) + countryList.get(viewHolder.getAdapterPosition()).getCases());
+                dialog_cases.setText(context.getString(R.string.cases) + countryList.get(viewHolder.getAdapterPosition()).getTodayCases());
+                dialog_active.setText(context.getString(R.string.active) + countryList.get(viewHolder.getAdapterPosition()).getActive());
+                dialog_recover.setText(context.getString(R.string.recovered) + countryList.get(viewHolder.getAdapterPosition()).getRecovered());
+                dialog_death.setText(context.getString(R.string.deaths) + countryList.get(viewHolder.getAdapterPosition()).getDeaths());
 //                Picasso.get().load(countryFlag.get(viewHolder.getAdapterPosition()).getFlag()).into(viewHolder.dialog_flag);
                 System.out.println(dialog_flag);
 
@@ -91,11 +92,12 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchView
         String flag = countryInfo.getFlag();
         String country_name = item.getCountry();
         String cases = item.getCases();
-//        String convert = String.format("%d", country_name);
+
+        DecimalFormat formatter = new DecimalFormat("#,###,###");
 
         Picasso.get().load(flag).fit().centerCrop().into(holder.flags);
         holder.country.setText(country_name);
-        holder.total_cases.setText("Total cases: " + cases);
+        holder.total_cases.setText(context.getString(R.string.total_cases) + formatter.format(Integer.parseInt(cases)));
     }
 
     @Override

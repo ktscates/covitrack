@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.squareup.picasso.Picasso;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -31,7 +32,6 @@ public class NewCaseAdapter extends RecyclerView.Adapter<NewCaseAdapter.NewCaseV
     public NewCaseAdapter(Context context, List<Country> countryList, List<CountryInfo> countryFlag) {
         this.context = context;
         this.countryList = countryList;
-//        countryListSearch= new ArrayList<>(countryList);
         this.countryFlag = countryFlag;
 
     }
@@ -62,9 +62,11 @@ public class NewCaseAdapter extends RecyclerView.Adapter<NewCaseAdapter.NewCaseV
             String country_name = item.getCountry();
             String cases = item.getTodayCases();
 
+        DecimalFormat formatter = new DecimalFormat("#,###,###");
+
             Picasso.get().load(flag).fit().centerInside().into(holder.flags);
             holder.country.setText(country_name);
-            holder.total_cases.setText("New cases: " + cases);
+            holder.total_cases.setText(context.getString(R.string.cases) + formatter.format(Integer.parseInt(cases)));
 
     }
 
