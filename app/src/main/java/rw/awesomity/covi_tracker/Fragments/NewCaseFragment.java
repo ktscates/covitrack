@@ -135,7 +135,7 @@ public class NewCaseFragment extends Fragment {
             @Override
             public void onResponse(Call<List<Country>> call, Response<List<Country>> response) {
                 countryList = response.body();
-                Collections.sort(countryList, Country.BY_TODAY_CASES.reversed());
+                Collections.reverse(countryList);
                 Log.d("TAG", "Response = " + countryList);
                 shimmerFrameLayout.stopShimmerAnimation();
                 shimmerFrameLayout.setVisibility(View.GONE);

@@ -1,21 +1,22 @@
 package rw.awesomity.covi_tracker.Fragments;
 
-
-import android.media.Image;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.facebook.shimmer.ShimmerFrameLayout;
 import com.squareup.picasso.Picasso;
 
-import java.util.List;
+import java.text.DecimalFormat;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -23,7 +24,6 @@ import retrofit2.Response;
 import rw.awesomity.covi_tracker.Api.Api;
 import rw.awesomity.covi_tracker.Api.RetrofitClient;
 import rw.awesomity.covi_tracker.Models.Country;
-import rw.awesomity.covi_tracker.Models.CountryInfo;
 import rw.awesomity.covi_tracker.R;
 
 public class HomeFragment extends Fragment {
@@ -36,6 +36,8 @@ public class HomeFragment extends Fragment {
     TextView active;
     TextView recovered;
     TextView deaths;
+    ShimmerFrameLayout shimmerFrameLayout;
+    LinearLayout linear_home;
 
     @Nullable
     @Override
@@ -60,15 +62,15 @@ public class HomeFragment extends Fragment {
 
                 Country country = response.body();
 
+                DecimalFormat formatter = new DecimalFormat("#,###,###");
                 country_name.setText(country.getCountry());
-                total_cases.setText(getString(R.string.total_cases) + " " + country.getCases());
-                new_cases.setText(getString(R.string.cases) + " " + country.getTodayCases());
-                active.setText(getString(R.string.active) + " " + country.getActive());
-                recovered.setText(getString(R.string.recovered) + " " + country.getRecovered());
-                deaths.setText(getString(R.string.deaths) + " " + country.getDeaths());
+                total_cases.setText(getString(R.string.total_cases) + " " + formatter.format(Integer.parseInt(country.getCases())));
+                new_cases.setText(getString(R.string.cases) + " " + formatter.format(Integer.parseInt(country.getTodayCases())));
+                active.setText(getString(R.string.active) + " " + formatter.format(Integer.parseInt(country.getActive())));
+                recovered.setText(getString(R.string.recovered) + " " + formatter.format(Integer.parseInt(country.getRecovered())));
+                deaths.setText(getString(R.string.deaths) + " " + formatter.format(Integer.parseInt(country.getDeaths())));
 
                 String flag = country.getCountryInfo().getFlag();
-                System.out.println(flag);
                 Picasso.get().load(flag).fit().centerInside().into(flag_img);
             }
 

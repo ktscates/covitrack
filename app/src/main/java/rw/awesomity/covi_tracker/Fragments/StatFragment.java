@@ -7,10 +7,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+
+import com.facebook.shimmer.ShimmerFrameLayout;
 
 import java.text.DecimalFormat;
 import java.util.List;
@@ -20,7 +23,6 @@ import retrofit2.Callback;
 import retrofit2.Response;
 import rw.awesomity.covi_tracker.Api.Api;
 import rw.awesomity.covi_tracker.Api.RetrofitClient;
-import rw.awesomity.covi_tracker.Models.Country;
 import rw.awesomity.covi_tracker.Models.Stats;
 import rw.awesomity.covi_tracker.R;
 
@@ -32,6 +34,8 @@ public class StatFragment extends Fragment {
     TextView active;
     TextView recovered;
     TextView deaths;
+    ShimmerFrameLayout shimmerFrameLayout;
+    LinearLayout linearText;
 
     @Nullable
     @Override
@@ -60,9 +64,8 @@ public class StatFragment extends Fragment {
                     deaths.setText(getString(R.string.total_world_deaths) + " " + formatter.format(Integer.parseInt(stats.getDeaths())));
                     recovered.setText(getString(R.string.total_world_recovered) + " " + formatter.format(Integer.parseInt(stats.getRecovered())));
                     active.setText(getString(R.string.total_world_active) + " " + formatter.format(Integer.parseInt(stats.getActive())));
+
                 }
-
-
             }
 
             @Override

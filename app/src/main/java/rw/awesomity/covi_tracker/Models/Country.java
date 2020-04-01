@@ -90,12 +90,12 @@ public class Country {
         }
     };
 
-    public static final Comparator<Country> BY_TODAY_CASES = new Comparator<Country>() {
-        @Override
-        public int compare(Country o1, Country o2) {
-            return o1.todayCases.compareTo(o2.todayCases);
-        }
-    };
+//    public static final Comparator<Country> BY_TODAY_CASES = new Comparator<Country>() {
+//        @Override
+//        public int compare(Country o1, Country o2) {
+//            return o1.todayCases.compareTo(o2.todayCases);
+//        }
+//    };
 
     public String getCountry() {
         return country;

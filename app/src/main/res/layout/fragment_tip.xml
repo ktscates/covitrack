@@ -2,13 +2,103 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="10dp"
     android:orientation="vertical">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Tip Fragment"
-        android:textSize="30dp"
-        android:layout_centerInParent="true" />
+        android:text="@string/tips"
+        android:textColor="@color/colorBlack"
+        android:textAlignment="center"
+        android:fontFamily="@font/concert_one"
+        android:textSize="30sp" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:layout_margin="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/tip1"
+                android:fontFamily="@font/concert_one"
+                android:layout_margin="5dp"
+                android:textColor="@color/colorBlack"
+                android:padding="5dp"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/tip2"
+                android:fontFamily="@font/concert_one"
+                android:layout_margin="5dp"
+                android:textColor="@color/colorBlack"
+                android:padding="5dp"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/tip3"
+                android:fontFamily="@font/concert_one"
+                android:textColor="@color/colorBlack"
+                android:layout_margin="5dp"
+                android:padding="5dp"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/tip4"
+                android:fontFamily="@font/concert_one"
+                android:layout_margin="5dp"
+                android:textColor="@color/colorBlack"
+                android:padding="5dp"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/tip5"
+                android:fontFamily="@font/concert_one"
+                android:layout_margin="5dp"
+                android:textColor="@color/colorBlack"
+                android:padding="5dp"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/tip6"
+                android:padding="5dp"
+                android:fontFamily="@font/concert_one"
+                android:textColor="@color/colorBlack"
+                android:layout_margin="5dp"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/tip7"
+                android:padding="5dp"
+                android:textColor="@color/colorBlack"
+                android:fontFamily="@font/concert_one"
+                android:layout_margin="5dp"
+                android:textSize="15sp" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
 
 </LinearLayout>
