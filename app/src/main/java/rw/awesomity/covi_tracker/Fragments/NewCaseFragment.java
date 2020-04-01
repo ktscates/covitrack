@@ -47,6 +47,8 @@ public class NewCaseFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_new_cases, container, false);
 
+        shimmerFrameLayout = (ShimmerFrameLayout)view.findViewById(R.id.shimmer_view_container);
+
         filterText = (EditText)view.findViewById(R.id.editText);
 
         countryList = new ArrayList<>();
@@ -80,6 +82,18 @@ public class NewCaseFragment extends Fragment {
         loadCountryFlags();
         return view;
 
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        shimmerFrameLayout.startShimmerAnimation();
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        shimmerFrameLayout.stopShimmerAnimation();
     }
 
     public void getFilter(String text) {
@@ -121,9 +135,13 @@ public class NewCaseFragment extends Fragment {
             @Override
             public void onResponse(Call<List<Country>> call, Response<List<Country>> response) {
                 countryList = response.body();
-                Collections.sort(countryList, Country.BY_TODAY_CASES);
+                Collections.sort(countryList, Country.BY_TODAY_CASES.reversed());
                 Log.d("TAG", "Response = " + countryList);
+                shimmerFrameLayout.stopShimmerAnimation();
+                shimmerFrameLayout.setVisibility(View.GONE);
+                recyclerView.setVisibility(View.VISIBLE);
                 newCaseAdapter.loadCountries(countryList);
+
 
             }
 

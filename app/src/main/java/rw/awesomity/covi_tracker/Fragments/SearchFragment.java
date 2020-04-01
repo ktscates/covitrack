@@ -16,6 +16,8 @@ import androidx.recyclerview.widget.GridLayoutManager;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.facebook.shimmer.ShimmerFrameLayout;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -37,12 +39,15 @@ public class SearchFragment extends Fragment {
     private SearchAdapter searchAdapter;
     private List<Country> countryList;
     private List<CountryInfo> countryFlag;
+    private ShimmerFrameLayout shimmerFrameLayout;
     private EditText filterText;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_search, container, false);
+
+        shimmerFrameLayout = (ShimmerFrameLayout)view.findViewById(R.id.shimmer_view_container);
 
         filterText = (EditText)view.findViewById(R.id.editText);
 
@@ -79,6 +84,18 @@ public class SearchFragment extends Fragment {
 
         }
 
+        @Override
+        public void onResume() {
+            super.onResume();
+            shimmerFrameLayout.startShimmerAnimation();
+        }
+
+        @Override
+        public void onPause() {
+            super.onPause();
+            shimmerFrameLayout.stopShimmerAnimation();
+        }
+
         public void getFilter(String text) {
             List<Country> list = new ArrayList<>();
 
@@ -99,6 +116,9 @@ public class SearchFragment extends Fragment {
                 public void onResponse(Call<List<CountryInfo>> call, Response<List<CountryInfo>> response) {
                     countryFlag = response.body();
                     Log.d("TAG","Response = " + countryList);
+                    shimmerFrameLayout.stopShimmerAnimation();
+                    shimmerFrameLayout.setVisibility(View.GONE);
+                    recyclerView.setVisibility(View.VISIBLE);
                     searchAdapter.loadFlag(countryFlag);
 
                 }
