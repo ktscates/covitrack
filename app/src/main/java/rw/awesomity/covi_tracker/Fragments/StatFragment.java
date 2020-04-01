@@ -12,6 +12,7 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import java.text.DecimalFormat;
 import java.util.List;
 
 import retrofit2.Call;
@@ -28,7 +29,6 @@ public class StatFragment extends Fragment {
     Api api;
     ImageView earth;
     TextView total_cases;
-    TextView updated;
     TextView active;
     TextView recovered;
     TextView deaths;
@@ -39,7 +39,6 @@ public class StatFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_stat, container, false);
 
         total_cases = (TextView)view.findViewById(R.id.total_cases);
-        updated = (TextView)view.findViewById(R.id.new_cases);
         active = (TextView)view.findViewById(R.id.active);
         recovered = (TextView)view.findViewById(R.id.recovered);
         deaths = (TextView)view.findViewById(R.id.deaths);
@@ -55,12 +54,12 @@ public class StatFragment extends Fragment {
 
                 Stats stats = response.body();
 
+                DecimalFormat formatter = new DecimalFormat("#,###,###");
                 if (stats != null) {
-                    total_cases.setText("Cases: " + stats.getCases());
-                    deaths.setText("Deaths: " + stats.getDeaths());
-                    recovered.setText("Recovered: " + stats.getRecovered());
-                    updated.setText("Updated: " + stats.getUpdated());
-                    active.setText("Active: " + stats.getActive());
+                    total_cases.setText(getString(R.string.total_world_cases) + " " + formatter.format(Integer.parseInt(stats.getCases())));
+                    deaths.setText(getString(R.string.total_world_deaths) + " " + formatter.format(Integer.parseInt(stats.getDeaths())));
+                    recovered.setText(getString(R.string.total_world_recovered) + " " + formatter.format(Integer.parseInt(stats.getRecovered())));
+                    active.setText(getString(R.string.total_world_active) + " " + formatter.format(Integer.parseInt(stats.getActive())));
                 }
 
 
