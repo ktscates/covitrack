@@ -10,7 +10,7 @@
         android:id="@+id/search"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/stats"
+        android:text="@string/all"
         android:fontFamily="@font/concert_one"
         android:textColor="@color/colorBlack"
         android:textAlignment="center"
