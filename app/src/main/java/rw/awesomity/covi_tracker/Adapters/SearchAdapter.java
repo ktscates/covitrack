@@ -69,12 +69,12 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchView
 //                ImageView dialog_flag =
 
                 dialog_country_name.setText(countryList.get(viewHolder.getAdapterPosition()).getCountry());
-                dialog_total.setText(context.getString(R.string.total_cases) + countryList.get(viewHolder.getAdapterPosition()).getCases());
-                dialog_cases.setText(context.getString(R.string.cases) + countryList.get(viewHolder.getAdapterPosition()).getTodayCases());
-                dialog_active.setText(context.getString(R.string.active) + countryList.get(viewHolder.getAdapterPosition()).getActive());
-                dialog_recover.setText(context.getString(R.string.recovered) + countryList.get(viewHolder.getAdapterPosition()).getRecovered());
-                dialog_death.setText(context.getString(R.string.deaths) + countryList.get(viewHolder.getAdapterPosition()).getDeaths());
-//                Picasso.get().load(countryFlag.get(viewHolder.getAdapterPosition()).getFlag()).into(viewHolder.dialog_flag);
+                dialog_total.setText(context.getString(R.string.total_cases) + " " + countryList.get(viewHolder.getAdapterPosition()).getCases());
+                dialog_cases.setText(context.getString(R.string.cases) + " " + countryList.get(viewHolder.getAdapterPosition()).getTodayCases());
+                dialog_active.setText(context.getString(R.string.active) + " " + countryList.get(viewHolder.getAdapterPosition()).getActive());
+                dialog_recover.setText(context.getString(R.string.recovered) + " " + countryList.get(viewHolder.getAdapterPosition()).getRecovered());
+                dialog_death.setText(context.getString(R.string.deaths) + " " + countryList.get(viewHolder.getAdapterPosition()).getDeaths());
+                Picasso.get().load(countryList.get(viewHolder.getAdapterPosition()).getCountryInfo().getFlag()).into(dialog_flag);
                 System.out.println(dialog_flag);
 
                 dialogBoxInfo.show();
@@ -97,7 +97,7 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchView
 
         Picasso.get().load(flag).fit().centerCrop().into(holder.flags);
         holder.country.setText(country_name);
-        holder.total_cases.setText(context.getString(R.string.total_cases) + formatter.format(Integer.parseInt(cases)));
+        holder.total_cases.setText(context.getString(R.string.total_cases) + " " + formatter.format(Integer.parseInt(cases)));
     }
 
     @Override

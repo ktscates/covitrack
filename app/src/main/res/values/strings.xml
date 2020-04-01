@@ -9,14 +9,15 @@
     <string name="all">Stats</string>
     <string name="kinyarwanda" translatable="false">Kinyarwanda</string>
     <string name="country">Country</string>
-    <string name="total_cases">Total Cases: </string>
-    <string name="cases">New Cases: </string>
-    <string name="active">Active: </string>
-    <string name="recovered">Recovered" </string>
-    <string name="deaths">Deaths: </string>
-    <string name="name">New Cases: </string>
-    <string name="total_world_cases">Total cases (World): </string>
-    <string name="total_world_active">Active cases (World): </string>
-    <string name="total_world_recovered">Total recovered (World): </string>
-    <string name="total_world_deaths">Total deaths (World): </string>
+    <string name="total_cases">Total Cases:</string>
+    <string name="cases">New Cases:</string>
+    <string name="active">Active:</string>
+    <string name="recovered">Recovered:</string>
+    <string name="deaths">Deaths:</string>
+    <string name="name">New Cases</string>
+    <string name="countries">Countries</string>
+    <string name="total_world_cases">Total cases (World):</string>
+    <string name="total_world_active">Active cases (World):</string>
+    <string name="total_world_recovered">Total recovered (World):</string>
+    <string name="total_world_deaths">Total deaths (World):</string>
 </resources>

@@ -23,6 +23,7 @@ import retrofit2.Response;
 import rw.awesomity.covi_tracker.Api.Api;
 import rw.awesomity.covi_tracker.Api.RetrofitClient;
 import rw.awesomity.covi_tracker.Models.Country;
+import rw.awesomity.covi_tracker.Models.CountryInfo;
 import rw.awesomity.covi_tracker.R;
 
 public class HomeFragment extends Fragment {
@@ -49,9 +50,6 @@ public class HomeFragment extends Fragment {
         deaths = (TextView)view.findViewById(R.id.deaths);
         flag_img = (ImageView)view.findViewById(R.id.flag);
 
-        String flag = "https://raw.githubusercontent.com/NovelCOVID/API/master/assets/flags/rw.png";
-        Picasso.get().load(flag).fit().centerCrop().into(flag_img);
-
         api = RetrofitClient.getInstance().create(Api.class);
 
         Call<Country> call = api.getOneCountry();
@@ -62,13 +60,16 @@ public class HomeFragment extends Fragment {
 
                 Country country = response.body();
 
-                    country_name.setText(country.getCountry());
-                    total_cases.setText(getString(R.string.total_cases) + country.getCases());
-                    new_cases.setText(getString(R.string.cases) + country.getTodayCases());
-                    active.setText(getString(R.string.active) + country.getActive());
-                    recovered.setText(getString(R.string.recovered) + country.getRecovered());
-                    deaths.setText(getString(R.string.deaths) + country.getDeaths());
+                country_name.setText(country.getCountry());
+                total_cases.setText(getString(R.string.total_cases) + " " + country.getCases());
+                new_cases.setText(getString(R.string.cases) + " " + country.getTodayCases());
+                active.setText(getString(R.string.active) + " " + country.getActive());
+                recovered.setText(getString(R.string.recovered) + " " + country.getRecovered());
+                deaths.setText(getString(R.string.deaths) + " " + country.getDeaths());
 
+                String flag = country.getCountryInfo().getFlag();
+                System.out.println(flag);
+                Picasso.get().load(flag).fit().centerInside().into(flag_img);
             }
 
             @Override
@@ -76,7 +77,6 @@ public class HomeFragment extends Fragment {
                 Log.d("TAG","Response = "+t.toString());
             }
         });
-
 
         return view;
     }

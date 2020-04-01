@@ -21,12 +21,19 @@
             android:textSize="30sp" />
 
         <EditText
-
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_search_gray_24dp"
+            android:textColor="@color/colorBlack"
             android:id="@+id/editText"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp" />
+            android:fontFamily="@font/concert_one"
+            android:background="@android:color/transparent"
+            android:padding="10dp"
+            android:layout_gravity="center"
+            android:textSize="20sp"
+            android:layout_marginLeft="50dp"
+            android:hint="@string/search_view"
+            android:layout_marginRight="50dp" />
 
 
         <androidx.recyclerview.widget.RecyclerView

@@ -56,10 +56,10 @@ public class StatFragment extends Fragment {
 
                 DecimalFormat formatter = new DecimalFormat("#,###,###");
                 if (stats != null) {
-                    total_cases.setText(getString(R.string.total_world_cases) + formatter.format(Integer.parseInt(stats.getCases())));
-                    deaths.setText(getString(R.string.total_world_deaths) + formatter.format(Integer.parseInt(stats.getDeaths())));
-                    recovered.setText(getString(R.string.total_world_recovered) + formatter.format(Integer.parseInt(stats.getRecovered())));
-                    active.setText(getString(R.string.total_world_active) + formatter.format(Integer.parseInt(stats.getActive())));
+                    total_cases.setText(getString(R.string.total_world_cases) + " " + formatter.format(Integer.parseInt(stats.getCases())));
+                    deaths.setText(getString(R.string.total_world_deaths) + " " + formatter.format(Integer.parseInt(stats.getDeaths())));
+                    recovered.setText(getString(R.string.total_world_recovered) + " " + formatter.format(Integer.parseInt(stats.getRecovered())));
+                    active.setText(getString(R.string.total_world_active) + " " + formatter.format(Integer.parseInt(stats.getActive())));
                 }
 
 

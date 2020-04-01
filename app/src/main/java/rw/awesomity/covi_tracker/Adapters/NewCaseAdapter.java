@@ -26,7 +26,6 @@ public class NewCaseAdapter extends RecyclerView.Adapter<NewCaseAdapter.NewCaseV
 
     Context context;
     List<Country> countryList;
-    List<Country> countryListSearch;
     List<CountryInfo> countryFlag;
 
     public NewCaseAdapter(Context context, List<Country> countryList, List<CountryInfo> countryFlag) {
@@ -66,7 +65,7 @@ public class NewCaseAdapter extends RecyclerView.Adapter<NewCaseAdapter.NewCaseV
 
             Picasso.get().load(flag).fit().centerInside().into(holder.flags);
             holder.country.setText(country_name);
-            holder.total_cases.setText(context.getString(R.string.cases) + formatter.format(Integer.parseInt(cases)));
+            holder.total_cases.setText(context.getString(R.string.cases) + " " + formatter.format(Integer.parseInt(cases)));
 
     }
 

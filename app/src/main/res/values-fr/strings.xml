@@ -8,15 +8,16 @@
     <string name="stats">Stat</string>
     <string name="search_view">Recherche pays</string>
     <string name="all">Statistiques</string>
-    <string name="country">Pays: </string>
-    <string name="total_cases">"Nombre total: "</string>
-    <string name="cases">"Nouveau cas: "</string>
-    <string name="active">"Cas en cours: "</string>
-    <string name="recovered">"Nombre de cas guérit: "</string>
-    <string name="deaths">"Nombre total de morts: "</string>
-    <string name="name">"Nouveau cas: "</string>
-    <string name="total_world_cases">"Nombre total (Mondial): "</string>
-    <string name="total_world_active">"Nombre total de cas en cours (Mondial): "</string>
-    <string name="total_world_recovered">"Nombre total de cas guérit (Mondial): "</string>
-    <string name="total_world_deaths">"Nombre total de morts (Mondial): "</string>
+    <string name="country">Pays</string>
+    <string name="total_cases">Nombre total:</string>
+    <string name="cases">Nouveau cas:</string>
+    <string name="active">Cas en cours:</string>
+    <string name="recovered">Nombre de cas guérit:</string>
+    <string name="deaths">Nombre total de morts:</string>
+    <string name="name">Nouveau cas</string>
+    <string name="countries">Les Pays</string>
+    <string name="total_world_cases">Nombre total (Mondial):</string>
+    <string name="total_world_active">Nombre total de cas en cours (Mondial):</string>
+    <string name="total_world_recovered">Nombre total de cas guérit (Mondial):</string>
+    <string name="total_world_deaths">Nombre total de morts (Mondial):</string>
 </resources>
