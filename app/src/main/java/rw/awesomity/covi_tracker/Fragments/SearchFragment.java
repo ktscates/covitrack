@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -39,6 +40,7 @@ public class SearchFragment extends Fragment {
     private List<Country> countryList;
     private ShimmerFrameLayout shimmerFrameLayout;
     private EditText filterText;
+    TextView errorText;
 
     @Nullable
     @Override
@@ -46,7 +48,7 @@ public class SearchFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_search, container, false);
 
         shimmerFrameLayout = (ShimmerFrameLayout)view.findViewById(R.id.shimmer_view_container);
-
+        errorText = (TextView)view.findViewById(R.id.error);
         filterText = (EditText)view.findViewById(R.id.editText);
 
         countryList = new ArrayList<>();
@@ -124,9 +126,17 @@ public class SearchFragment extends Fragment {
                 @Override
                 public void onFailure(Call<List<Country>> call, Throwable t) {
                     Log.d("TAG","Response = "+t.toString());
+                    showFailureMessage();
                 }
             });
         }
+
+    private void showFailureMessage() {
+        errorText.setText(getString(R.string.error));
+        errorText.setVisibility(View.VISIBLE);
+        shimmerFrameLayout.stopShimmer();
+        shimmerFrameLayout.setVisibility(View.GONE);
+    }
 
 }
 

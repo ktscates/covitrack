@@ -6,6 +6,7 @@
     <string name="tips">Tips</string>
     <string name="stats">Stats</string>
     <string name="search_view">Search Country</string>
+    <string name="error">Something went wrong. Please check your Internet connection and try again later</string>
     <string name="all">Statistics</string>
     <string name="kinyarwanda" translatable="false">Kinyarwanda</string>
     <string name="country">Country</string>

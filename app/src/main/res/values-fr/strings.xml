@@ -7,6 +7,7 @@
     <string name="tips">Conseils</string>
     <string name="stats">Stat</string>
     <string name="search_view">Recherche pays</string>
+    <string name="error">Veuillez vérifier votre connexion Internet et réessayer plus tard</string>
     <string name="all">Statistiques</string>
     <string name="country">Pays</string>
     <string name="total_cases">Nombre total:</string>

@@ -37,6 +37,7 @@ public class StatFragment extends Fragment {
     TextView recovered;
     TextView deaths;
     ProgressBar progressBar;
+    TextView errorText;
 
     @Nullable
     @Override
@@ -44,6 +45,7 @@ public class StatFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_stat, container, false);
 
         progressBar = (ProgressBar) view.findViewById(R.id.progress);
+        errorText = (TextView)view.findViewById(R.id.error);
 
         total_cases = (TextView)view.findViewById(R.id.total_cases);
         active = (TextView)view.findViewById(R.id.active);
@@ -84,8 +86,15 @@ public class StatFragment extends Fragment {
             @Override
             public void onFailure(Call<Stats> call, Throwable t) {
                 Log.d("TAG","Response = "+t.toString());
+                showFailureMessage();
             }
         });
+    }
+
+    private void showFailureMessage() {
+        errorText.setText(getString(R.string.error));
+        errorText.setVisibility(View.VISIBLE);
+        progressBar.setVisibility(View.GONE);
     }
 
 }

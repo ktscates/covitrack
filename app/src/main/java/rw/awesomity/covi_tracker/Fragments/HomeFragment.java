@@ -35,6 +35,7 @@ public class HomeFragment extends Fragment {
     TextView recovered;
     TextView deaths;
     ProgressBar progressBar;
+    TextView errorText;
 
     @Nullable
     @Override
@@ -42,6 +43,7 @@ public class HomeFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
         progressBar = (ProgressBar)view.findViewById(R.id.progress_bar);
+        errorText = (TextView)view.findViewById(R.id.error);
 
         country_name = (TextView)view.findViewById(R.id.country);
         total_cases = (TextView)view.findViewById(R.id.total_cases);
@@ -79,9 +81,16 @@ public class HomeFragment extends Fragment {
             @Override
             public void onFailure(Call<Country> call, Throwable t) {
                 Log.d("TAG","Response = "+t.toString());
+                showFailureMessage();
             }
         });
 
         return view;
+    }
+
+    private void showFailureMessage() {
+        errorText.setText(getString(R.string.error));
+        errorText.setVisibility(View.VISIBLE);
+        progressBar.setVisibility(View.GONE);
     }
 }
