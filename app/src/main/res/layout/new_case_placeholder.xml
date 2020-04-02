@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_height="wrap_content">
 
     <RelativeLayout
         android:id="@+id/relative"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:orientation="horizontal"
         android:background="@drawable/rounded"
+        android:orientation="horizontal"
         android:padding="10dp">
 
 
@@ -25,11 +25,11 @@
                 android:id="@+id/country"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
                 android:background="@color/colorDarkGray"
                 android:fontFamily="@font/concert_one"
-                android:layout_marginBottom="10dp"
-                android:textColor="@color/colorBlack"
                 android:textAlignment="center"
+                android:textColor="@color/colorBlack"
                 android:textSize="20sp" />
 
             <de.hdodenhof.circleimageview.CircleImageView
@@ -37,8 +37,8 @@
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_gravity="center"
-                android:contentDescription="flag"
-                android:background="@color/colorDarkGray"/>
+                android:background="@color/colorDarkGray"
+                android:contentDescription="flag" />
 
 
         </LinearLayout>
@@ -46,9 +46,9 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_toEndOf="@id/linear"
-            android:layout_marginStart="20dp"
             android:layout_centerInParent="true"
+            android:layout_marginStart="20dp"
+            android:layout_toEndOf="@id/linear"
             android:orientation="vertical">
 
             <TextView
@@ -57,8 +57,8 @@
                 android:layout_height="wrap_content"
                 android:background="@color/colorDarkGray"
                 android:fontFamily="@font/concert_one"
-                android:textColor="@color/colorBlack"
                 android:textAlignment="center"
+                android:textColor="@color/colorBlack"
                 android:textSize="20sp" />
 
 

@@ -9,8 +9,8 @@
         android:id="@+id/error"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="5dp"
         android:layout_centerInParent="true"
+        android:layout_margin="5dp"
         android:textAlignment="center"
         android:textSize="15sp" />
 
@@ -19,10 +19,10 @@
         android:id="@+id/search"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/all"
         android:fontFamily="@font/concert_one"
-        android:textColor="@color/colorBlack"
+        android:text="@string/all"
         android:textAlignment="center"
+        android:textColor="@color/colorBlack"
         android:textSize="30sp" />
 
     <ImageView
@@ -30,9 +30,9 @@
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_below="@id/search"
-        android:layout_margin="5dp"
-        android:layout_gravity="center"
         android:layout_centerInParent="true"
+        android:layout_gravity="center"
+        android:layout_margin="5dp"
         android:contentDescription="flag"
         android:src="@drawable/earth" />
 
@@ -61,8 +61,8 @@
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:fontFamily="@font/concert_one"
-            android:textColor="@color/colorBlack"
             android:textAlignment="center"
+            android:textColor="@color/colorBlack"
             android:textSize="20sp" />
 
         <TextView
@@ -71,8 +71,8 @@
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:fontFamily="@font/concert_one"
-            android:textColor="@android:color/holo_green_light"
             android:textAlignment="center"
+            android:textColor="@android:color/holo_green_light"
             android:textSize="20sp" />
 
         <TextView
@@ -81,8 +81,8 @@
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:fontFamily="@font/concert_one"
-            android:textColor="@color/colorLightRed"
             android:textAlignment="center"
+            android:textColor="@color/colorLightRed"
             android:textSize="20sp" />
 
     </LinearLayout>
@@ -91,8 +91,8 @@
         android:id="@+id/progress"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:indeterminateTint="@color/colorLightRed"
-        android:layout_centerInParent="true"/>
+        android:layout_centerInParent="true"
+        android:indeterminateTint="@color/colorLightRed" />
 
 
 </RelativeLayout>

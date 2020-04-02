@@ -9,8 +9,8 @@
         android:id="@+id/error"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="5dp"
         android:layout_centerInParent="true"
+        android:layout_margin="5dp"
         android:textAlignment="center"
         android:textSize="15sp" />
 
@@ -95,7 +95,7 @@
         android:id="@+id/progress_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:indeterminateTint="@color/colorLightRed"
-        android:layout_centerInParent="true"/>
+        android:layout_centerInParent="true"
+        android:indeterminateTint="@color/colorLightRed" />
 
 </RelativeLayout>

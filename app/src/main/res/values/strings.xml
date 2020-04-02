@@ -8,7 +8,9 @@
     <string name="search_view">Search Country</string>
     <string name="error">Something went wrong. Please check your Internet connection and try again later</string>
     <string name="all">Statistics</string>
-    <string name="kinyarwanda" translatable="false">Kinyarwanda</string>
+    <string name="english">English</string>
+    <string name="french">French</string>
+    <string name="kinyarwanda">Kinyarwanda</string>
     <string name="country">Country</string>
     <string name="total_cases">Total Cases:</string>
     <string name="cases">New Cases:</string>

@@ -8,7 +8,9 @@
     <string name="search_view">Shakisha igihugu</string>
     <string name="error">Hari ikitagenze neza. musuzume umurongo wa enterineti yanyu hanyuma mugerageze nyuma</string>
     <string name="all">Imibare</string>
-    <string name="kinyarwanda" translatable="false">Kinyarwanda</string>
+    <string name="english">Icongereza</string>
+    <string name="french">Igifaransa</string>
+    <string name="kinyarwanda">Ikinyarwanda</string>
     <string name="country">Igihugu</string>
     <string name="total_cases">Abamaze kwandura bose:</string>
     <string name="cases">Ubwandu bushya:</string>

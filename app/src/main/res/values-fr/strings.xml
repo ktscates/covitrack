@@ -9,6 +9,9 @@
     <string name="search_view">Recherche pays</string>
     <string name="error">Veuillez vérifier votre connexion Internet et réessayer plus tard</string>
     <string name="all">Statistiques</string>
+    <string name="english">Anglais</string>
+    <string name="french">Français</string>
+    <string name="kinyarwanda">Kinyarwanda</string>
     <string name="country">Pays</string>
     <string name="total_cases">Nombre total:</string>
     <string name="cases">Nouveau cas:</string>
