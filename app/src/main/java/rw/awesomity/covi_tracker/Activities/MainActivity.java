@@ -3,22 +3,14 @@ package rw.awesomity.covi_tracker.Activities;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.SharedPreferences;
-import android.content.res.Configuration;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuInflater;
+
 import android.view.MenuItem;
-import android.view.inputmethod.EditorInfo;
-import android.widget.SearchView;
 
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-
-import java.util.Locale;
 
 import rw.awesomity.covi_tracker.Fragments.HomeFragment;
 import rw.awesomity.covi_tracker.Fragments.NewCaseFragment;
