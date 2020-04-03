@@ -6,14 +6,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Bundle;
+
 import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.inputmethod.EditorInfo;
-import android.widget.SearchView;
 
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -38,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        loadLanguage();
+        loadLanguage();
         setContentView(R.layout.activity_main);
 
         bottomNav = (BottomNavigationView) findViewById(R.id.bottom_navigation);
@@ -90,29 +87,51 @@ public class MainActivity extends AppCompatActivity {
             fragmentTransaction.commit();
     }
 
+    //use this method to save language
+    private void saveLanguage(String lang) {
+        SharedPreferences preferences = getSharedPreferences(FILE_NAME, MODE_PRIVATE);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putString(KEY_LANG, lang);
+        editor.apply();
+        recreate();
+    }
 
+    private void loadLanguage() {
+        //use this method to load language,
+        Locale locale = new Locale(getLangCode());
+        Locale.setDefault(locale);
+        Configuration config = new Configuration();
+        config.locale = locale;
+        getResources().updateConfiguration(config, getResources().getDisplayMetrics());
+    }
 
-//    @Override
-//    public boolean onCreateOptionsMenu(Menu menu) {
-//        getMenuInflater().inflate(R.menu.translate_menu_item, menu);
-//        return true;
-//    }
-//
-//    @Override
-//    public boolean onOptionsItemSelected(MenuItem item) {
-//        switch (item.getItemId()) {
-//            case R.id.action_english:
-//                saveLanguage("en");
-//                break;
-//            case R.id.action_french:
-//                saveLanguage("fr");
-//                break;
-//            case R.id.action_kinyarwanda:
-//                saveLanguage("rw");
-//                break;
-//        }
-//        return true;
-//    }
+    private String getLangCode() {
+        SharedPreferences preferences = getSharedPreferences(FILE_NAME, MODE_PRIVATE);
+        // save english as the default
+        String langCode = preferences.getString(KEY_LANG, "en");
+        return langCode;
+    }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.translate_menu_item, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_english:
+                saveLanguage("en");
+                break;
+            case R.id.action_french:
+                saveLanguage("fr");
+                break;
+            case R.id.action_kinyarwanda:
+                saveLanguage("rw");
+                break;
+        }
+        return true;
+    }
 
 }

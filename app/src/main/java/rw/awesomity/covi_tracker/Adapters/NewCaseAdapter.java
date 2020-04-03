@@ -4,8 +4,6 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Filter;
-import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -15,7 +13,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.squareup.picasso.Picasso;
 
 import java.text.DecimalFormat;
-import java.util.ArrayList;
 import java.util.List;
 
 import rw.awesomity.covi_tracker.Models.Country;
@@ -28,19 +25,13 @@ public class NewCaseAdapter extends RecyclerView.Adapter<NewCaseAdapter.NewCaseV
     List<Country> countryList;
     List<CountryInfo> countryFlag;
 
-    public NewCaseAdapter(Context context, List<Country> countryList, List<CountryInfo> countryFlag) {
+    public NewCaseAdapter(Context context, List<Country> countryList) {
         this.context = context;
         this.countryList = countryList;
-        this.countryFlag = countryFlag;
-
     }
 
     public void loadCountries(List<Country> countryList){
         this.countryList = countryList;
-        notifyDataSetChanged();
-    }
-    public void loadFlag(List<CountryInfo> countryFlag){
-        this.countryFlag = countryFlag;
         notifyDataSetChanged();
     }
 
@@ -59,13 +50,13 @@ public class NewCaseAdapter extends RecyclerView.Adapter<NewCaseAdapter.NewCaseV
 
             String flag = countryInfo.getFlag();
             String country_name = item.getCountry();
-            String cases = item.getTodayCases();
+            int cases = item.getTodayCases();
 
         DecimalFormat formatter = new DecimalFormat("#,###,###");
 
             Picasso.get().load(flag).fit().centerInside().into(holder.flags);
             holder.country.setText(country_name);
-            holder.total_cases.setText(context.getString(R.string.cases) + " " + formatter.format(Integer.parseInt(cases)));
+            holder.total_cases.setText(context.getString(R.string.cases) + " " + formatter.format(cases).toString());
 
     }
 

@@ -25,8 +25,9 @@
                 android:id="@+id/country"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:background="@color/colorDarkGray"
                 android:fontFamily="@font/concert_one"
-                android:text="@string/country"
                 android:textAlignment="center"
                 android:textColor="@color/colorBlack"
                 android:textSize="20sp" />
@@ -36,14 +37,14 @@
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_gravity="center"
-                android:contentDescription="flag"
-                android:src="@drawable/rw" />
+                android:background="@color/colorDarkGray"
+                android:contentDescription="flag" />
 
 
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:layout_marginStart="20dp"
@@ -54,8 +55,8 @@
                 android:id="@+id/total_cases"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@color/colorDarkGray"
                 android:fontFamily="@font/concert_one"
-                android:text="@string/cases"
                 android:textAlignment="center"
                 android:textColor="@color/colorBlack"
                 android:textSize="20sp" />

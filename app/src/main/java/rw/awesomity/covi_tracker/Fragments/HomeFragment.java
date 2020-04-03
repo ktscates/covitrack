@@ -1,13 +1,12 @@
 package rw.awesomity.covi_tracker.Fragments;
 
-
-import android.media.Image;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
@@ -15,7 +14,7 @@ import androidx.fragment.app.Fragment;
 
 import com.squareup.picasso.Picasso;
 
-import java.util.List;
+import java.text.DecimalFormat;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -23,7 +22,6 @@ import retrofit2.Response;
 import rw.awesomity.covi_tracker.Api.Api;
 import rw.awesomity.covi_tracker.Api.RetrofitClient;
 import rw.awesomity.covi_tracker.Models.Country;
-import rw.awesomity.covi_tracker.Models.CountryInfo;
 import rw.awesomity.covi_tracker.R;
 
 public class HomeFragment extends Fragment {
@@ -36,11 +34,16 @@ public class HomeFragment extends Fragment {
     TextView active;
     TextView recovered;
     TextView deaths;
+    ProgressBar progressBar;
+    TextView errorText;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
+
+        progressBar = (ProgressBar)view.findViewById(R.id.progress_bar);
+        errorText = (TextView)view.findViewById(R.id.error);
 
         country_name = (TextView)view.findViewById(R.id.country);
         total_cases = (TextView)view.findViewById(R.id.total_cases);
@@ -60,24 +63,34 @@ public class HomeFragment extends Fragment {
 
                 Country country = response.body();
 
+                DecimalFormat formatter = new DecimalFormat("#,###,###");
                 country_name.setText(country.getCountry());
-                total_cases.setText(getString(R.string.total_cases) + " " + country.getCases());
-                new_cases.setText(getString(R.string.cases) + " " + country.getTodayCases());
-                active.setText(getString(R.string.active) + " " + country.getActive());
-                recovered.setText(getString(R.string.recovered) + " " + country.getRecovered());
-                deaths.setText(getString(R.string.deaths) + " " + country.getDeaths());
+                total_cases.setText(getString(R.string.total_cases) + " " + formatter.format(Integer.parseInt(country.getCases())));
+                new_cases.setText(getString(R.string.cases) + " " + formatter.format(country.getTodayCases()));
+                active.setText(getString(R.string.active) + " " + formatter.format(Integer.parseInt(country.getActive())));
+                recovered.setText(getString(R.string.recovered) + " " + formatter.format(Integer.parseInt(country.getRecovered())));
+                deaths.setText(getString(R.string.deaths) + " " + formatter.format(Integer.parseInt(country.getDeaths())));
 
                 String flag = country.getCountryInfo().getFlag();
-                System.out.println(flag);
                 Picasso.get().load(flag).fit().centerInside().into(flag_img);
+                progressBar.setVisibility(View.GONE);
+
+
             }
 
             @Override
             public void onFailure(Call<Country> call, Throwable t) {
                 Log.d("TAG","Response = "+t.toString());
+                showFailureMessage();
             }
         });
 
         return view;
+    }
+
+    private void showFailureMessage() {
+        errorText.setText(getString(R.string.error));
+        errorText.setVisibility(View.VISIBLE);
+        progressBar.setVisibility(View.GONE);
     }
 }

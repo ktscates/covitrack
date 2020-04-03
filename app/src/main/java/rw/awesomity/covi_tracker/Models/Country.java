@@ -19,7 +19,7 @@ public class Country {
     private String cases;
     @SerializedName("todayCases")
     @Expose
-    private String todayCases;
+    private int todayCases;
     @SerializedName("deaths")
     @Expose
     private String deaths;
@@ -67,7 +67,7 @@ public class Country {
      * @param todayCases
      * @param todayDeaths
      */
-    public Country(String country, CountryInfo countryInfo, String cases, String todayCases, String deaths, String todayDeaths, String recovered, String active, String critical, String casesPerOneMillion, String deathsPerOneMillion, String updated) {
+    public Country(String country, CountryInfo countryInfo, String cases, int todayCases, String deaths, String todayDeaths, String recovered, String active, String critical, String casesPerOneMillion, String deathsPerOneMillion, String updated) {
         super();
         this.country = country;
         this.countryInfo = countryInfo;
@@ -93,7 +93,7 @@ public class Country {
     public static final Comparator<Country> BY_TODAY_CASES = new Comparator<Country>() {
         @Override
         public int compare(Country o1, Country o2) {
-            return o1.todayCases.compareTo(o2.todayCases);
+            return o2.todayCases - o1.todayCases;
         }
     };
 
@@ -136,15 +136,15 @@ public class Country {
         return this;
     }
 
-    public String getTodayCases() {
+    public int getTodayCases() {
         return todayCases;
     }
 
-    public void setTodayCases(String todayCases) {
+    public void setTodayCases(int todayCases) {
         this.todayCases = todayCases;
     }
 
-    public Country withTodayCases(String todayCases) {
+    public Country withTodayCases(int todayCases) {
         this.todayCases = todayCases;
         return this;
     }

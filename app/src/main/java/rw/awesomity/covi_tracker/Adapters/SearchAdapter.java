@@ -29,24 +29,17 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchView
 
     Context context;
     List<Country> countryList;
-    List<CountryInfo> countryFlag;
     Dialog dialogBoxInfo;
 
-    public SearchAdapter(Context context, List<Country> countryList, List<CountryInfo> countryFlag) {
+    public SearchAdapter(Context context, List<Country> countryList) {
         this.context = context;
         this.countryList = countryList;
-        this.countryFlag = countryFlag;
     }
 
     public void loadCountries(List<Country> countryList){
         this.countryList = countryList;
         notifyDataSetChanged();
     }
-    public void loadFlag(List<CountryInfo> countryFlag){
-        this.countryFlag = countryFlag;
-        notifyDataSetChanged();
-    }
-
     @NonNull
     @Override
     public SearchAdapter.SearchViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {

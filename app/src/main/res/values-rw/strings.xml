@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name" translatable="false">CoviTrack</string>
+    <string name="home">Ahabanza</string>
+    <string name="new_cases">Ubwandu</string>
+    <string name="search">Shakisha</string>
+    <string name="tips">Impanuro</string>
+    <string name="stats">Imibare</string>
+    <string name="search_view">Shakisha igihugu</string>
+    <string name="error">Hari ikitagenze neza. musuzume umurongo wa enterineti yanyu hanyuma mugerageze nyuma</string>
+    <string name="all">Imibare</string>
+    <string name="english">Icongereza</string>
+    <string name="french">Igifaransa</string>
+    <string name="kinyarwanda">Ikinyarwanda</string>
+    <string name="country">Igihugu</string>
+    <string name="total_cases">Abamaze kwandura bose:</string>
+    <string name="cases">Ubwandu bushya:</string>
+    <string name="active">Abanduye kuri ubu:</string>
+    <string name="recovered">Abamaze gukira:</string>
+    <string name="deaths">Abamaze gupfa:</string>
+    <string name="name">Ubwandu bushya</string>
+    <string name="countries">Ibihugu</string>
+    <string name="total_world_cases">Abamaze kwandura kw\'isi yose:</string>
+    <string name="total_world_active">Abagifise ubwandu kwi\'isi yose:</string>
+    <string name="total_world_recovered">Abamaze gukira kw\'isi yose:</string>
+    <string name="total_world_deaths">Abamaze gupfa kw\'isi yose:</string>
+    <string name="tip1">1. Gukaraba intoki inshuro nyinshi ukoresheje amazi meza n\'isabune. Igihe isabune itabonetse ushobora gukoresha arukoro yifashishwa mu kwica mikorobe zo mu biganza.</string>
+    <string name="tip2">2. Igihe ukorora cyangwa witsamura, ipfuke umunwa cyangwa amazuru ukoresheje agatambaro cyangwa ukingeho inkokora. Gerageza kutitsamurira cyangwa gukororera mu biganza kuko ushobora gukwirakwiza virusi ukoresheje ibiganza byawe. Jugunya agatambaro wakoresheje ahabugenewe. Igihe ukororeye/witsamuriye mu biganza ntugire ikintu na kimwe ukoraho kandi uhite ukaraba intoki ukoresheje amazi meza n\'isabune..</string>
+    <string name="tip3">3. Irinde kwegerana cyane n\'umuntu uwo ariwo wese ukorora, w\'itsamura, cyangwa se urwaye. Nibura usigemo intera ingana na metero 1 hatagati yanyu, kandi ubashishikarize kugana ikigo nderabuzima kibegereye.</string>
+    <string name="tip4">4. Irinde gukora mu maso, mu mazuru no mu kanwa. Intoki zikora ahantu henshi hashobora kuba hari virusi. Nukora mu maso, mu mazuru cyangwa mu kanwa ukoresheje intoki zawe zanduye virusi, ushobora gukura virusi ahantu wakoze ukiyanduza ubwawe.</string>
+    <string name="tip5">5. Gana muganga niba wumva ufite umuriro, ukorora cyangwa wumva ufite ibabazo byo guhumeka nabi. Ubu ni uburyo bwiza bwo kwiyitaho no kwirinda gukwirakwiza virusi mu bagize umuryango wawe no mu bandi. Wibuke guhamagara 114 ngo umumenyeshe ibimenyetso ugaragaza kugira ngo wirinde kwanduza abandi.</string>
+    <string name="tip6">6. Guma mu rugo igihe urwaye.</string>
+    <string name="tip7">7. Sukura kandi wice mikorobe ziri ku bikoresho cyangwa ahantu wakoze ukoresheje umuti wa kororine cyangwa arukoro. Ntibiramenyekana neza igihe virusi imara ari nzima ku bintu cyangwa ahantu, ariko imiti irimo arukoro iri ku kigero cya 70% yakwica iyi virusi.</string>
+</resources>
