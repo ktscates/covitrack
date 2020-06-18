@@ -8,6 +8,9 @@ import java.util.Comparator;
 
 public class Country {
 
+    @SerializedName("updated")
+    @Expose
+    private String updated;
     @SerializedName("country")
     @Expose
     private String country;
@@ -29,6 +32,9 @@ public class Country {
     @SerializedName("recovered")
     @Expose
     private String recovered;
+    @SerializedName("todayRecovered")
+    @Expose
+    private String todayRecovered;
     @SerializedName("active")
     @Expose
     private String active;
@@ -41,9 +47,36 @@ public class Country {
     @SerializedName("deathsPerOneMillion")
     @Expose
     private String deathsPerOneMillion;
-    @SerializedName("updated")
+    @SerializedName("tests")
     @Expose
-    private String updated;
+    private String tests;
+    @SerializedName("testsPerOneMillion")
+    @Expose
+    private String testsPerOneMillion;
+    @SerializedName("population")
+    @Expose
+    private String population;
+    @SerializedName("continent")
+    @Expose
+    private String continent;
+    @SerializedName("oneCasePerPeople")
+    @Expose
+    private String oneCasePerPeople;
+    @SerializedName("oneDeathPerPeople")
+    @Expose
+    private String oneDeathPerPeople;
+    @SerializedName("oneTestPerPeople")
+    @Expose
+    private String oneTestPerPeople;
+    @SerializedName("activePerOneMillion")
+    @Expose
+    private String activePerOneMillion;
+    @SerializedName("recoveredPerOneMillion")
+    @Expose
+    private String recoveredPerOneMillion;
+    @SerializedName("criticalPerOneMillion")
+    @Expose
+    private String criticalPerOneMillion;
 
     /**
      * No args constructor for use in serialization
@@ -54,21 +87,33 @@ public class Country {
 
     /**
      * 
+     * @param continent
      * @param country
-     * @param recovered
+     * @param recoveredPerOneMillion
      * @param cases
      * @param critical
-     * @param deathsPerOneMillion
+     * @param oneCasePerPeople
      * @param active
+     * @param testsPerOneMillion
+     * @param population
+     * @param oneDeathPerPeople
+     * @param recovered
+     * @param oneTestPerPeople
+     * @param tests
+     * @param criticalPerOneMillion
+     * @param deathsPerOneMillion
+     * @param todayRecovered
      * @param casesPerOneMillion
      * @param countryInfo
      * @param updated
      * @param deaths
+     * @param activePerOneMillion
      * @param todayCases
      * @param todayDeaths
      */
-    public Country(String country, CountryInfo countryInfo, String cases, int todayCases, String deaths, String todayDeaths, String recovered, String active, String critical, String casesPerOneMillion, String deathsPerOneMillion, String updated) {
+    public Country(String updated, String country, CountryInfo countryInfo, String cases, int todayCases, String deaths, String todayDeaths, String recovered, String todayRecovered, String active, String critical, String casesPerOneMillion, String deathsPerOneMillion, String tests, String testsPerOneMillion, String population, String continent, String oneCasePerPeople, String oneDeathPerPeople, String oneTestPerPeople, String activePerOneMillion, String recoveredPerOneMillion, String criticalPerOneMillion) {
         super();
+        this.updated = updated;
         this.country = country;
         this.countryInfo = countryInfo;
         this.cases = cases;
@@ -76,11 +121,21 @@ public class Country {
         this.deaths = deaths;
         this.todayDeaths = todayDeaths;
         this.recovered = recovered;
+        this.todayRecovered = todayRecovered;
         this.active = active;
         this.critical = critical;
         this.casesPerOneMillion = casesPerOneMillion;
         this.deathsPerOneMillion = deathsPerOneMillion;
-        this.updated = updated;
+        this.tests = tests;
+        this.testsPerOneMillion = testsPerOneMillion;
+        this.population = population;
+        this.continent = continent;
+        this.oneCasePerPeople = oneCasePerPeople;
+        this.oneDeathPerPeople = oneDeathPerPeople;
+        this.oneTestPerPeople = oneTestPerPeople;
+        this.activePerOneMillion = activePerOneMillion;
+        this.recoveredPerOneMillion = recoveredPerOneMillion;
+        this.criticalPerOneMillion = criticalPerOneMillion;
     }
 
     public static final Comparator<Country> BY_NAME_ALPHABETICAL = new Comparator<Country>() {
@@ -97,17 +152,20 @@ public class Country {
         }
     };
 
+    public String getUpdated() {
+        return updated;
+    }
+
+    public void setUpdated(String updated) {
+        this.updated = updated;
+    }
+
     public String getCountry() {
         return country;
     }
 
     public void setCountry(String country) {
         this.country = country;
-    }
-
-    public Country withCountry(String country) {
-        this.country = country;
-        return this;
     }
 
     public CountryInfo getCountryInfo() {
@@ -118,22 +176,12 @@ public class Country {
         this.countryInfo = countryInfo;
     }
 
-    public Country withCountryInfo(CountryInfo countryInfo) {
-        this.countryInfo = countryInfo;
-        return this;
-    }
-
     public String getCases() {
         return cases;
     }
 
     public void setCases(String cases) {
         this.cases = cases;
-    }
-
-    public Country withCases(String cases) {
-        this.cases = cases;
-        return this;
     }
 
     public int getTodayCases() {
@@ -144,22 +192,12 @@ public class Country {
         this.todayCases = todayCases;
     }
 
-    public Country withTodayCases(int todayCases) {
-        this.todayCases = todayCases;
-        return this;
-    }
-
     public String getDeaths() {
         return deaths;
     }
 
     public void setDeaths(String deaths) {
         this.deaths = deaths;
-    }
-
-    public Country withDeaths(String deaths) {
-        this.deaths = deaths;
-        return this;
     }
 
     public String getTodayDeaths() {
@@ -170,11 +208,6 @@ public class Country {
         this.todayDeaths = todayDeaths;
     }
 
-    public Country withTodayDeaths(String todayDeaths) {
-        this.todayDeaths = todayDeaths;
-        return this;
-    }
-
     public String getRecovered() {
         return recovered;
     }
@@ -183,9 +216,12 @@ public class Country {
         this.recovered = recovered;
     }
 
-    public Country withRecovered(String recovered) {
-        this.recovered = recovered;
-        return this;
+    public String getTodayRecovered() {
+        return todayRecovered;
+    }
+
+    public void setTodayRecovered(String todayRecovered) {
+        this.todayRecovered = todayRecovered;
     }
 
     public String getActive() {
@@ -196,22 +232,12 @@ public class Country {
         this.active = active;
     }
 
-    public Country withActive(String active) {
-        this.active = active;
-        return this;
-    }
-
     public String getCritical() {
         return critical;
     }
 
     public void setCritical(String critical) {
         this.critical = critical;
-    }
-
-    public Country withCritical(String critical) {
-        this.critical = critical;
-        return this;
     }
 
     public String getCasesPerOneMillion() {
@@ -222,11 +248,6 @@ public class Country {
         this.casesPerOneMillion = casesPerOneMillion;
     }
 
-    public Country withCasesPerOneMillion(String casesPerOneMillion) {
-        this.casesPerOneMillion = casesPerOneMillion;
-        return this;
-    }
-
     public String getDeathsPerOneMillion() {
         return deathsPerOneMillion;
     }
@@ -235,22 +256,84 @@ public class Country {
         this.deathsPerOneMillion = deathsPerOneMillion;
     }
 
-    public Country withDeathsPerOneMillion(String deathsPerOneMillion) {
-        this.deathsPerOneMillion = deathsPerOneMillion;
-        return this;
+    public String getTests() {
+        return tests;
     }
 
-    public String getUpdated() {
-        return updated;
+    public void setTests(String tests) {
+        this.tests = tests;
     }
 
-    public void setUpdated(String updated) {
-        this.updated = updated;
+    public String getTestsPerOneMillion() {
+        return testsPerOneMillion;
     }
 
-    public Country withUpdated(String updated) {
-        this.updated = updated;
-        return this;
+    public void setTestsPerOneMillion(String testsPerOneMillion) {
+        this.testsPerOneMillion = testsPerOneMillion;
+    }
+
+    public String getPopulation() {
+        return population;
+    }
+
+    public void setPopulation(String population) {
+        this.population = population;
+    }
+
+    public String getContinent() {
+        return continent;
+    }
+
+    public void setContinent(String continent) {
+        this.continent = continent;
+    }
+
+    public String getOneCasePerPeople() {
+        return oneCasePerPeople;
+    }
+
+    public void setOneCasePerPeople(String oneCasePerPeople) {
+        this.oneCasePerPeople = oneCasePerPeople;
+    }
+
+    public String getOneDeathPerPeople() {
+        return oneDeathPerPeople;
+    }
+
+    public void setOneDeathPerPeople(String oneDeathPerPeople) {
+        this.oneDeathPerPeople = oneDeathPerPeople;
+    }
+
+    public String getOneTestPerPeople() {
+        return oneTestPerPeople;
+    }
+
+    public void setOneTestPerPeople(String oneTestPerPeople) {
+        this.oneTestPerPeople = oneTestPerPeople;
+    }
+
+    public String getActivePerOneMillion() {
+        return activePerOneMillion;
+    }
+
+    public void setActivePerOneMillion(String activePerOneMillion) {
+        this.activePerOneMillion = activePerOneMillion;
+    }
+
+    public String getRecoveredPerOneMillion() {
+        return recoveredPerOneMillion;
+    }
+
+    public void setRecoveredPerOneMillion(String recoveredPerOneMillion) {
+        this.recoveredPerOneMillion = recoveredPerOneMillion;
+    }
+
+    public String getCriticalPerOneMillion() {
+        return criticalPerOneMillion;
+    }
+
+    public void setCriticalPerOneMillion(String criticalPerOneMillion) {
+        this.criticalPerOneMillion = criticalPerOneMillion;
     }
 
 }

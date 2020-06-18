@@ -103,7 +103,7 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchView
         notifyDataSetChanged();
     }
 
-    public class SearchViewHolder extends RecyclerView.ViewHolder {
+    public static class SearchViewHolder extends RecyclerView.ViewHolder {
         CardView search_recycler;
         ImageView flags;
         TextView country;

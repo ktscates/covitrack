@@ -5,15 +5,13 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitClient {
 
-    private static final String API_URL = "https://corona.lmao.ninja/";
-    private static Retrofit retrofit = null;
+    private static final String API_URL = "https://corona.lmao.ninja/v2/";
 
 
     public static Retrofit getInstance(){
-        retrofit = new Retrofit.Builder()
+        return new Retrofit.Builder()
                 .baseUrl(API_URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
-        return retrofit;
     }
 }

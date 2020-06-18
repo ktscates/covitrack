@@ -8,10 +8,7 @@ public class CountryInfo {
 
     @SerializedName("_id")
     @Expose
-    private String _id;
-    @SerializedName("country")
-    @Expose
-    private String country;
+    private String id;
     @SerializedName("iso2")
     @Expose
     private String iso2;
@@ -37,18 +34,16 @@ public class CountryInfo {
 
     /**
      * 
-     * @param country
      * @param flag
      * @param _long
-     * @param _id
+     * @param id
      * @param iso2
      * @param lat
      * @param iso3
      */
-    public CountryInfo(String _id, String country, String iso2, String iso3, String lat, String _long, String flag) {
+    public CountryInfo(String id, String iso2, String iso3, String lat, String _long, String flag) {
         super();
-        this._id = _id;
-        this.country = country;
+        this.id = id;
         this.iso2 = iso2;
         this.iso3 = iso3;
         this.lat = lat;
@@ -56,30 +51,12 @@ public class CountryInfo {
         this.flag = flag;
     }
 
-    public String get_id() {
-        return _id;
+    public String getId() {
+        return id;
     }
 
-    public void set_id(String _id) {
-        this._id = _id;
-    }
-
-    public CountryInfo with_id(String _id) {
-        this._id = _id;
-        return this;
-    }
-
-    public String getCountry() {
-        return country;
-    }
-
-    public void setCountry(String country) {
-        this.country = country;
-    }
-
-    public CountryInfo withCountry(String country) {
-        this.country = country;
-        return this;
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getIso2() {
@@ -90,22 +67,12 @@ public class CountryInfo {
         this.iso2 = iso2;
     }
 
-    public CountryInfo withIso2(String iso2) {
-        this.iso2 = iso2;
-        return this;
-    }
-
     public String getIso3() {
         return iso3;
     }
 
     public void setIso3(String iso3) {
         this.iso3 = iso3;
-    }
-
-    public CountryInfo withIso3(String iso3) {
-        this.iso3 = iso3;
-        return this;
     }
 
     public String getLat() {
@@ -116,11 +83,6 @@ public class CountryInfo {
         this.lat = lat;
     }
 
-    public CountryInfo withLat(String lat) {
-        this.lat = lat;
-        return this;
-    }
-
     public String getLong() {
         return _long;
     }
@@ -129,22 +91,12 @@ public class CountryInfo {
         this._long = _long;
     }
 
-    public CountryInfo with_long(String _long) {
-        this._long = _long;
-        return this;
-    }
-
     public String getFlag() {
         return flag;
     }
 
     public void setFlag(String flag) {
         this.flag = flag;
-    }
-
-    public CountryInfo withFlag(String flag) {
-        this.flag = flag;
-        return this;
     }
 
 }
