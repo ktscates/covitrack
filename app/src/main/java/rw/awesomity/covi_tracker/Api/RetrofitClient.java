@@ -5,7 +5,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitClient {
 
-    private static final String API_URL = "https://corona.lmao.ninja/v2/";
+    private static final String API_URL = "https://corona.lmao.ninja/v3/";
 
 
     public static Retrofit getInstance(){
